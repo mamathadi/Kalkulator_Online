@@ -1,0 +1,143 @@
+/* Styling Global */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #4a9702, #2a5298); /* Latar belakang gradien */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Kotak Kalkulator */
+.calculator {
+    background: #008db1;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Layar Tampilan */
+.display {
+    margin-bottom: 20px;
+}
+
+#result {
+    width: 100%;
+    height: 60px;
+    background: #111;
+    color: #00ff00; /* Warna hijau neon */
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    padding: 0 15px;
+    font-size: 2.5em;
+    box-sizing: border-box;
+    pointer-events: none; /* Tidak bisa diketik langsung */
+    transition: all 0.2s ease;
+}
+
+/* Tombol */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Warna Tombol Angka */
+.number, .zero, .btn[data-value="."], .btn[data-value="="] {
+    background-color: #444;
+}
+
+/* Warna Tombol Operator */
+.operator {
+    background-color: #f7923a; /* Warna operator */
+}
+
+/* Tombol AC dan DEL */
+.btn[data-value="AC"], .btn[data-value="DEL"] {
+    background-color: #d9534f; /* Merah untuk Clear */
+}
+
+/* Tombol Zero */
+.zero {
+    grid-column: span 2; /* Nol mengambil 2 kolom */
+}
+
+/* Tombol Equal */
+.equal {
+    background-color: #1abc9c !important; /* Hijau tosca untuk Equal */
+    grid-column: span 1;
+}
+
+/* --- Animasi Saat Tombol Ditekan (Hover dan Active) --- */
+
+/* Efek Hover */
+.btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05); /* Sedikit membesar saat di-hover */
+}
+
+/* Efek Active (saat tombol diklik) - ANIMAASI UTAMA */
+.btn:active {
+    transform: scale(0.95) translateY(2px); /* Sedikit mengecil dan menekan ke bawah */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan menjadi lebih kecil */
+    opacity: 0.8;
+}
+
+/* Animasi untuk layar saat input baru */
+.input-flash {
+    animation: flash 0.1s;
+}
+
+@keyframes flash {
+    0% { background: #333; }
+    100% { background: #111; }
+}
+
+/* Animasi hasil saat dihitung */
+.result-bounce {
+    animation: bounce 0.3s ease-out;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+/* Styling Dasar untuk Footer */
+.main-footer {
+    /* Pastikan footer memiliki lebar penuh */
+    width: 70%; 
+    /* Warna latar belakang (ganti sesuai tema Anda) */
+    background-color: #333; 
+    /* Warna teks */
+    color: #fff; 
+    /* Padding untuk memberikan ruang di dalam footer */
+    padding: 5px 0; 
+    /* Teks rata tengah */
+    text-align: center; 
+    /* Margin atas untuk memisahkan dari konten utama */
+    margin-top: 88px; 
+}
+
+.copyright-text {
+    /* Ukuran font yang lebih kecil dan jelas */
+    font-size: 0.7em;
+    /* Hilangkan margin default dari tag <p> */
+    margin: 0; 
+    /* Jenis font (opsional) */
+    font-family: Arial, sans-serif;
+}
